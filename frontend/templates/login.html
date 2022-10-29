@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="/templates/css/style.css">
+        <meta charset="UTF-8">
+    </head>
+    <header>
+        <title>Iniciar Sesion</title>
+    </header>
+    <body>
+        <script type="text/javascript" src="js/login.js"></script>
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Iniciar sesion</h1>
+                </div>
+    
+                <div class="login-form">
+                    <div class="control-group">
+                    <input type="text" class="login-field" value="" placeholder="Correo electronico" id="login-name">
+                    <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+                    <div class="control-group">
+                    <input type="password" class="login-field" minlength="6" placeholder="Contraseña" id="login-pass">
+                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+    
+                    <a class="btn btn-primary btn-large btn-block" href="#" onclick="loginUser()">Entrar</a>
+                    <a class="login-link" href="resetPassword.html">Olvidaste tu contraseña?</a>
+                    <a class="login-link" href="register.html">No tienes cuenta? Registrate ahora </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="/templates/css/style.css">
+        <meta charset="UTF-8">
+    </head>
+    <header>
+        <title>Registrate</title>
+    </header>
+    <body>
+        <script type="text/javascript" src="js/register_user.js"></script>
+        <form id="form_usuario" method="POST">
+        <div class="login"> 
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Registrate</h1>
+                </div>
+    
+                <div class="login-form">
+                    <div class="control-group">
+                    <input class="login-field" type="text" name="name" id="name" placeholder="Nombre" required></div>
+                    <div class="control-group">
+                    <input class="login-field" type="text" name="matricula" id="matricula" placeholder="Matricula" required></div>
+                    <div class="control-group">
+                    <input type="email" class="login-field" value="" placeholder="Correo electronico" id="login-name">
+                    <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+                    <div class="control-group">
+                    <input type="password" class="login-field" minlength="6" placeholder="Contraseña" id="login-pass">
+                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+    
+                    <a class="btn btn-primary btn-large btn-block" href="#" onclick="insertUser()">Entrar</a>
+                    <a class="login-link" href="login.html">¿Ya tienes una cuenta? Inicia sesion</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    </body>
+</html>

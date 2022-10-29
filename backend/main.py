@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, status, Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from urllib import response
 from typing import List
@@ -13,6 +14,15 @@ import pyrebase
 app = FastAPI()
 
 security = HTTPBasic()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Firebase Config
 firebaseConfig = {
@@ -54,6 +64,9 @@ class Producto(BaseModel):
     category: str
     major: str
 
+class ResetPassword(BaseModel):
+    email : str
+
 
 # Routes
 
@@ -66,8 +79,8 @@ async def index():
 @app.post(
     "/register",
     status_code=status.HTTP_202_ACCEPTED,
-    summary="Register a new user",
-    description="Register a new user",
+    summary = "Register a new user",
+    description = "Register a new user",
     tags=["User"],
 )
 async def register(user: User_Register):
@@ -76,19 +89,22 @@ async def register(user: User_Register):
     email = user.email
     password = user.password
     name = user.name
-    matricula = user.matricula
-
+    matricula = user.matricula  
+    
     try:
         user_info = auth.create_user_with_email_and_password(email, password)
-
-        idToken = user_info["idToken"]
-        user = auth.get_account_info(idToken)
-
-        return user
-
+        idTokenU =  user_info["idToken"]
+        user = auth.get_account_info(idTokenU)
+        emailV = auth.send_email_verification(idTokenU)
+        uid = user["users"][0]["localId"]
+        data = {"Nombre": name, "Matricula": matricula, "Email": email}
+        result = db.child("users").child(uid).set(data)
+        response = {"user_info": user_info}
+        return response
+    
     except Exception as error:
         print(f"Error : {error}")
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Error")
+        raise HTTPException(status_code = status.HTTP_401_UNAUTHORIZED, detail = "Error")
 
 
 @app.post(
@@ -145,3 +161,15 @@ async def productos(
     except Exception as error:
         print(f"Error : {error}")
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
+
+@app.post(
+    "/passwordR",
+    summary= "Recover Password",
+    description= "Recover Password",
+    tags = ["User"],
+    
+)
+async def resetPassword(user : ResetPassword):
+    auth = firebase.auth()
+    email = user.email
+    auth.send_password_reset_email(email)
