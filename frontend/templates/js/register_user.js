@@ -18,7 +18,7 @@ function insertUser(){
       }
 
     var request = new XMLHttpRequest();
-    request.open("POST","http://127.0.0.1:8000/register",true);
+    request.open("POST","http://206.189.255.11/register",true);
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
@@ -33,7 +33,7 @@ function insertUser(){
 
         if (status == 202){
             alert("Usuario creado con exito");
-            window.location.replace("/templates/index.html");
+            window.location.replace("/index.html");
         }
         else{
             alert(json.detail);

@@ -5,7 +5,7 @@ function resetPassword(){
 
     payload = {"email" : email.value}
     var request = new XMLHttpRequest();
-    request.open("POST","http://127.0.0.1:8000/passwordR",true);
+    request.open("POST","http://206.189.255.11/passwordR",true);
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
@@ -16,7 +16,7 @@ function resetPassword(){
 
         if (status == 202){
             alert("Correo enviado");
-            window.location.replace("/templates/login.html");
+            window.location.replace("/login.html");
         }
         else{
             alert(json.detail);
