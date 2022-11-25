@@ -1,0 +1,55 @@
+
+
+function insertUser(){
+
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let name = document.getElementById('nombre');
+    let matricula = document.getElementById('matricula');
+    let numeroT = document.getElementById('telefono');
+    let carrera = document.getElementById('carrera');
+    let carreraSeleccionada = carrera.options[carrera.selectedIndex].value;
+    console.log(carreraSeleccionada);   
+
+    console.log('Email Recibido : ' + email.value);
+    console.log('Password Recibido : ' + password.value);
+    console.log('Nombre Recibido : ' + name.value);
+    console.log('Matricula Recibido : ' + matricula.value);
+    console.log('Carrera Recibido:'  + carreraSeleccionada);  
+    console.log('Telefono Recibido : ' + numeroT.value);
+
+    let payload = {
+        "name": name.value,
+        "matricula": matricula.value,
+        "email": email.value,
+        "password": password.value,
+        "carrera": carreraSeleccionada.value,
+        "telefono": numeroT.value
+      }
+
+    var request = new XMLHttpRequest();
+    request.open("POST","http://127.0.0.1:8000/register",true);
+    request.setRequestHeader('Accept', 'application/json');
+    request.setRequestHeader('Content-Type', 'application/json');
+
+    request.onload = () =>{
+        const response = request.responseText;
+        const json = JSON.parse(response);
+        const status = request.status;
+
+        console.log("Response : " + response);
+        console.log("Status   : " + status);
+        console.log("Payload  :"  + payload);
+
+        if (status == 202){
+            alert("Usuario creado con exito");
+            window.location.replace("owo.html");
+        }
+        else{
+            alert(json.detail);
+        }
+
+    };
+    request.send(JSON.stringify(payload));
+};
+

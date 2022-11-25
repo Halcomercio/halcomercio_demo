@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <script type="text/javascript" src="js/insertProduct.js"></script>
+    <form>
+        <label> Nombre producto </label>
+        <input type="text" required id="nombreP">
+        <br><br>
+        <label> Precio </label>
+        <input type="number" required id="precioP">
+        <br><br>
+        <label> Cantidad Disponible</label>
+        <input type="number" required id="cantidadP">
+        <br><br>
+        <label>Categoria</label> 
+        <select name="" id="categoria" required>
+            <option value="">--Selecciona categoria--</option>
+            <option value="Electronica">Electronica</option>
+            <option value="Computadoras">Computadoras</option>
+            <option value="Papeleria y Oficina">Papeleria y Oficina</option>
+            <option value="Electrodomesticos">Electrodomesticos/option>
+            <option value="Celulares">Celulares</option>
+            <option value="Libros">Libros</option>
+            <option value="Ropa y Calzado">Ropa y Calzado</option>
+        </select>
+        <br><br>
+        <label> Descripción </label>
+        <input type="text" required id="descripcionP">
+        <br><br>
+        <a href="#" onclick="insertProduct()">Agregar</a>
+        <br><br>
+        <a href="dashboard.html">Regresar</a>
+
+</body>
+</html>
