@@ -25,7 +25,7 @@ function insertUser(){
       }
 
     var request = new XMLHttpRequest();
-    request.open("POST","hhttp://206.189.255.11/register/",true);
+    request.open("POST","http://206.189.255.11/register/",true);
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
