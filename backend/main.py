@@ -184,18 +184,6 @@ async def getProducts():
         productos = cursor.fetchall()
     return productos
 
-@app.get("/deleteProduct", status_code=status.HTTP_200_OK)
-async def getProducts(nombre : Nombre):
-    with sqlite3.connect("backend/productos.sqlite") as connection:
-        connection.row_factory = sqlite3.Row
-        cursor = connection.cursor()
-        cursor.execute(
-            "DELETE * FROM productoss WHERE id_producto={}".format(nombre)
-        )
-        productos = cursor.fetchall()
-    return productos
-
-
 @app.post("/addProduct", status_code=status.HTTP_200_OK)
 async def addProduct(productos: Producto):
     with sqlite3.connect("backend/productos.sqlite") as connection:
