@@ -1,6 +1,6 @@
 function getProductos(){
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://127.0.0.1:8000/getProducts');
+    request.open('GET', 'http://206.189.255.11/getProducts');
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
