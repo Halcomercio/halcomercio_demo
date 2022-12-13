@@ -16,7 +16,7 @@ function insertProduct() {
     }
 
     var request = new XMLHttpRequest();
-    request.open("POST","http://127.0.0.1:8000/addProduct",true);
+    request.open("POST","http://206.189.255.11/addProduct/",true);
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
