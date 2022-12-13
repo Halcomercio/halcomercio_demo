@@ -8,7 +8,7 @@ function loginUser(){
       }
 
     var request = new XMLHttpRequest();
-    request.open("POST","http://127.0.0.1:8000/signin/",true);
+    request.open("POST","http://161.35.253.220/signin/",true);
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
