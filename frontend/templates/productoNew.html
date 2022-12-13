@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Registro de productos</title>
-  <link rel="stylesheet" href="/css/stylesu.css">
+  <link rel="stylesheet" href="css/stylesu.css">
 </head>
 <body>
   <div class="signupFrm">
@@ -16,22 +16,22 @@
       <h1 class="title">Registro de Producto</h1>
 
       <div class="inputContainer">
-        <input type="text" class="input" placeholder="a">
+        <input type="text" class="input" placeholder="a" id="nombreP">
         <label for="" class="label">Nombre del producto</label>
       </div>
 
       <div class="inputContainer">
-        <input type="text" class="input" placeholder="a">
+        <input type="text" class="input" placeholder="a" id="precioP">
         <label for="" class="label">Precio</label>
       </div>
       <div class="inputContainer">
-        <input type="text" class="input" placeholder="a">
+        <input type="text" class="input" placeholder="a" id="cantidadP">
         <label for="" class="label">Cantidad</label>
       </div>
     
 
       <div class="inputContainer">
-        <input type="text" class="input" placeholder="a">
+        <input type="text" class="input" placeholder="a" required id="descripcionP">
         <label for="" class="label">Detalles del producto</label>
       </div>
 
@@ -51,7 +51,7 @@
       <form method="POST" enctype="multipart/form-data" action="">
         <input type="file" name="myfile" />
        <br/><br/>
-      <a onclick="insertProduct()" class="submitBtn">Agregar</a>
+      <a href="#" onclick="insertProduct()" class="submitBtn">Agregar</a>
     </form>
     </div>
   </div>
