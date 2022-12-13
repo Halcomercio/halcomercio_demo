@@ -42,7 +42,7 @@ function getProductos(){
             var tr_favorito = document.createElement("td");
             var tr_ver = document.createElement("td");
            
-            tr_imagen.innerHTML =  '<img src="https://loremflickr.com/100/100/'+json[i].nombre+'class="card-img-top"/>';
+            tr_imagen.innerHTML =  '<img src="https://loremflickr.com/100/100/'+json[i].nombre+'/ class="card-img-top"/>';
             tr_nombre.innerHTML = json[i].nombre;
             tr_precio.innerHTML = json[i].precio;
             tr_cantidad.innerHTML = json[i].stock;
