@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException, status, Depends
 from fastapi import UploadFile, File
 from fastapi.security import HTTPBasic
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from urllib import response
 from typing import List
@@ -20,13 +19,6 @@ security = HTTPBasic()
 
 DATABASE_URL = os.path.join("backend/productos.sqlite")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Firebase Config
 firebaseConfig = {
