@@ -15,17 +15,24 @@
     <form action="" class="form">
       <h1 class="title">Registro de Producto</h1>
       <a href="http://161.35.253.220/catalogo.html" class="submitBtn">Regresar</a>
+      <div class="inputContainer">
         <input type="text" class="input" placeholder="a" id="nombreP">
         <label for="" class="label">Nombre del producto</label>
+      </div>
 
+      <div class="inputContainer">
         <input type="text" class="input" placeholder="a" id="precioP">
         <label for="" class="label">Precio</label>
-
+      </div>
+      <div class="inputContainer">
         <input type="text" class="input" placeholder="a" id="cantidadP">
         <label for="" class="label">Cantidad</label>
-
+      </div>
+      <div class="inputContainer">
         <input type="text" class="input" placeholder="a" required id="descripcionP">
         <label for="" class="label">Detalles del producto</label>
+      </div>
+      <div class="inputContainer">
         <select id="categoria" required>
             <option value="">--Selecciona categoria--</option>
             <option value="Electronica">Electronica</option>
@@ -36,6 +43,7 @@
             <option value="Libros">Libros</option>
             <option value="Ropa y Calzado">Ropa y Calzado</option>
         </select>
+      </div>
         <input type="file" name="myfile"/>
        <br/><br/>
       <a onclick="insertProduct()" class="submitBtn">Agregar</a>
