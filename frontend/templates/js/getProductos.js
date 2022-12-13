@@ -46,7 +46,7 @@ function getProductos(){
             tr_categoria.innerHTML = json[i].categoria;
             tr_descripcion.innerHTML = json[i].descripcion;
             tr_favorito.innerHTML = `<a aria-label="fav" id="agregar-favoritos" class="fa fa-heart" href="#"></a>`;
-            tr_ver.innerHTML = "<a href='#'>Detalles</a>";
+            tr_ver.innerHTML = "<a href='detalle.html'>Detalles</a>";
 
             // DAR A CADAR TR(COLUMNAS) DEL HTML LOS VALORES DE CADA FILA
             tr.appendChild(tr_imagen);
