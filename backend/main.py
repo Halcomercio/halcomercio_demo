@@ -12,13 +12,20 @@ import pyrebase
 import os
 from os import listdir, getcwd
 from IPython.core.display import Image
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 security = HTTPBasic()
 
 DATABASE_URL = os.path.join("productos.sqlite")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Firebase Config
 firebaseConfig = {
