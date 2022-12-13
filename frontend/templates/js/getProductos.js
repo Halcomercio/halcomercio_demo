@@ -4,6 +4,8 @@ function getProductos(){
     request.setRequestHeader('Accept', 'application/json');
     request.setRequestHeader('Content-Type', 'application/json');
 
+    var imagenes = ["esp.jph","iphone.jpg","laptop.jpg","xbox.jpg"]
+
     const tabla = document.getElementById('tabla-productos');
 
     var tableHead = document.createElement("thead");
@@ -39,7 +41,7 @@ function getProductos(){
             var tr_favorito = document.createElement("td");
             var tr_ver = document.createElement("td");
            
-            tr_imagen.innerHTML = '<img aria-label="producto" src="css/coco.jpg"/>';
+            tr_imagen.innerHTML = '<img aria-label="producto" src="$imagenes[i]"/>';
             tr_nombre.innerHTML = json[i].nombre;
             tr_precio.innerHTML = json[i].precio;
             tr_cantidad.innerHTML = json[i].stock;
