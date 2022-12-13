@@ -1,18 +1,67 @@
 <!DOCTYPE html>
-<html lang="es">
-    <header>
-        <title>Catalogo</title>
-    </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalogo</title>
+    <link rel="stylesheet" href="css\catalogo.css" />
+    <script src="https://kit.fontawesome.com/6b22c9e604.js" crossorigin="anonymous"></script> <!-- Enlace de fontawesome -->
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
     <body>
-        <h1>Catalogo</h1>
-        <script type="text/javascript" src="js/getProductos.js"></script>
-        <table id="tabla-productos" style="border-spacing: 15px; text-align: center;">
+        <header class="header"> <!-- Encabezado -->
+            <nav class="nav">
+                <a href="#" aria-label="logo_Halcomercio" class="logo "><!-- Logo -->
+                    <img alt="" src="css/halcomercio.jpg" class="logo">
+                </a> 
+    
+                <!-- Menu con Bars -->
+                <button class="nav-toggle" aria-label="Abrir menú"> 
+                    <i class="fas fa-bars"></i>
+                </button>
+        
+                <ul class="nav-menu"> <!-- Lista de las secciones -->
+                    <li class="nav-menu-item">
+                        <a href="#carreras" class="nav-menu-link nav-link">Carreras</a>
+                        <ul class="submenu"> <!-- Lista de las sub secciones -->
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. Criminalística</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. Contaduría</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. Innovacción de Negocios y Mercadotecnia</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. en Enfermería</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. Salud Reproductiva y Partería</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. Terapia Física</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Lic. en Diseño Digital</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Ing. en Energías Renovables</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Ing. Industrial</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Ing. Mecatrónica</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Ing. Nanotecnoligía</a></li>
+                            <li><a href="catalogo.html" class="nav-menu-link nav-link">Ing. en Desarrollo y Gestión de Software</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="catalogo.html" class="nav-menu-link nav-link">Uniformes</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="favoritos.html" class="nav-menu-link nav-link">Favoritos</a>
+                    </li>
+                    <li class="nav-menu-item">
+                        <a href="insertProduct.html" class="nav-menu-link nav-link">Agregar Producto</a>
+                    </li>
+                    <li class="perfil">
+                        <a href="perfil.html" aria-label="perfil_Usuario" class=" fa fa-user" ></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <script type="text/javascript" src="js/getProductos.js"></script>
+        <table id="tabla-productos" style="border-spacing: 100px; text-align: center;"></table>
 
         </table>
-
         <script async>
             document.body.onload = getProductos();
         </script>
-        <a href="dashboard.html">Regresar</a>
-    </body>
+        </main>
+    </body> 
 </html>
