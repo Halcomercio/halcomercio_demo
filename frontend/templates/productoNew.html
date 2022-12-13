@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registro de productos</title>
+  <link rel="stylesheet" href="/css/stylesu.css">
+</head>
+<body>
+  <div class="signupFrm">
+    
+    <div class="wrapper">
+    <form action="" class="form">
+      <a href="dashboard.html" class="submitBtn">Regresar</a>
+      <h1 class="title">Registro de Producto</h1>
+
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a">
+        <label for="" class="label">Nombre del producto</label>
+      </div>
+
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a">
+        <label for="" class="label">Precio</label>
+      </div>
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a">
+        <label for="" class="label">Cantidad</label>
+      </div>
+    
+
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a">
+        <label for="" class="label">Detalles del producto</label>
+      </div>
+
+      <div class="inputContainer">
+        <select name="" id="categoria" required>
+            <option value="">--Selecciona categoria--</option>
+            <option value="Electronica">Electronica</option>
+            <option value="Computadoras">Computadoras</option>
+            <option value="Papeleria y Oficina">Papeleria y Oficina</option>
+            <option value="Electrodomesticos">Electrodomesticos/option>
+            <option value="Celulares">Celulares</option>
+            <option value="Libros">Libros</option>
+            <option value="Ropa y Calzado">Ropa y Calzado</option>
+        </select>
+      </div>
+
+      <form method="POST" enctype="multipart/form-data" action="">
+        <input type="file" name="myfile" />
+       <br/><br/>
+      <a onclick="insertProduct()" class="submitBtn">Agregar</a>
+    </form>
+    </div>
+  </div>
+  <br><br>
+</body>
+</html>
