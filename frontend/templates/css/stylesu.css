@@ -81,8 +81,6 @@ body {
   height: 100px;
   text-align: center;
   justify-content: center;
-  pointer-events: none;
-  /*text-decoration: none;*/
 }
 
 .submitBtn:hover {
