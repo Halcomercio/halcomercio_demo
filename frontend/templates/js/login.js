@@ -21,7 +21,7 @@ function loginUser(){
         console.log("Status   : " + status);
 
         if (status == 202){
-            window.location.replace("dashboard.html");
+            window.location.replace("catalogo.html");
             sessionStorage.setItem("token", json.user_dat);
             console.log("Response : " + response);
             alert
