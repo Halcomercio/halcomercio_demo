@@ -17,7 +17,7 @@ app = FastAPI()
 
 security = HTTPBasic()
 
-DATABASE_URL = os.path.join("backend/productos.sqlite")
+DATABASE_URL = os.path.join("productos.sqlite")
 
 
 # Firebase Config
@@ -167,7 +167,7 @@ async def downloadImage(file_name: str):
 
 @app.get("/getProducts", status_code=status.HTTP_200_OK)
 async def getProducts():
-    with sqlite3.connect("backend/productos.sqlite") as connection:
+    with sqlite3.connect("productos.sqlite") as connection:
         connection.row_factory = sqlite3.Row
         cursor = connection.cursor()
         cursor.execute(
@@ -178,7 +178,7 @@ async def getProducts():
 
 @app.post("/addProduct", status_code=status.HTTP_200_OK)
 async def addProduct(productos: Producto):
-    with sqlite3.connect("backend/productos.sqlite") as connection:
+    with sqlite3.connect("productos.sqlite") as connection:
         connection.row_factory = sqlite3.Row
         cursor = connection.cursor()
         cursor.execute(
@@ -204,7 +204,7 @@ async def imagedb(files: UploadFile):
             status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid image"
         )
     path_image = "images/" + files.filename
-    with sqlite3.connect("backend/productos.sqlite") as connection:
+    with sqlite3.connect("productos.sqlite") as connection:
         connection.row_factory = sqlite3.Row
         cursor = connection.cursor()
         cursor.execute("INSERT INTO imagenes(img) VALUES ('{}')".format(path_image))
